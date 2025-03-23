@@ -1,36 +1,99 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Samiya ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #323232;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+        }
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff4d6d;
+            animation: float 4s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+        .message {
+            font-size: 18px;
+            white-space: pre-line;
+        }
+        .highlight {
+            color: #ffcccb;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-
-   
-    
-    <div class="letter_ct">
-        <input type="checkbox" id="check" />
-        <label for="check">
-            <span class="letter main"></span>
-            <div class="note">
-                <p class="int">Dear samiya,</p>
-                <p>
-                  Dear Samiya👀👀
-                  Wanna listen something most beautiful 👀
-                  Samiya listen please👀♥️ samiya i promise♥️🥹 i will take care of you till me last breath 👀 i will be the one when no one is with you i will be👀♥️♥️ i will be there everytime you need arms to hug, shoulders to lay and just want to talk to someone 👀 you know you have all of the qualities that i expect from a girl👀♥️ samiya you are thousand times better then Musfira, aliza aiman aur muchh moree...👀👀🥹♥️ You are a genuinely a gem🥹💎 bcz you are mine👀♥️ and you are just too awesomeee samiya♥️👀 khubsurati mein??👀 Samiya jeet gyi, ikhlaq mein ?? Samiya jeet gai👀❤️ pyar krne mein👀 Samiya jeet gai♥️ i want to talk to you samiya on some of the very very and very sensitive topics which may include my fears, my thoughts and my goals👀👀 hope so👀 i am just waiting and making myself comfortable 👀♥️ Luv you meri jaan♥️♥️♥️
-                </p>
-                <p class="sign">With warmth,<br />Apka cute bhai</p>
-            </div>
-            <span class="front"></span>
-            <span class="letter flap-bg"></span>
-            <span class="letter flap"></span>
-            <span class="heart"></span>
-        </label>
+    <div class="container">
+        <h2>Dear Samiya 👀❤️</h2>
+        <p class="message" id="text"></p>
     </div>
-    
-    <div class="txt">
-        <h3>Click on the letter 💌</h3>
-    </div>
+    <script>
+        const message = `Wanna hear something really beautiful? 👀
+Samiya, listen, please…👀♥️
 
+I promise you, from the bottom of my heart, that I will take care of you till my last breath.🥹♥️ No matter what happens, no matter how life changes, I will always be here. When things get tough, when the world feels heavy, when you feel alone—I will be the one standing by your side. 👀♥️♥️
 
+Whenever you need someone to hold you, a shoulder to lean on, or just someone to talk to, I will be there.👀♥️ You don’t have to go through anything alone. You will always have me, whether it’s a bad day, a silent night, or a moment when you just need to feel understood.
+
+Samiya, you are everything I ever wanted in a girl.👀♥️ You are kind, understanding, and so pure at heart. You are a thousand times better than Musfira, Aliza, Aiman, or anyone else…🥹♥️ They don’t even come close to you. You are one in a million—a true gem.💎
+
+In beauty?👀 Samiya wins.
+In kindness?👀 Samiya wins.
+In loyalty?👀 Samiya wins.
+In love?👀 Samiya wins. ❤️
+
+You are special, not just to me but in every way. You make everything feel better, even without trying. I want to talk to you about so many things—my fears, my dreams, the thoughts I keep hidden. You are the only one I feel safe enough to share them with.👀👀 I’m just waiting for the right moment, making myself ready to open up completely to you.
+
+Because you, Samiya, are my peace, my happiness, my everything. 👀♥️
+
+Luv you, meri jaan.♥️♥️♥️
+
+`;
+        
+        let index = 0;
+        function typeWriter() {
+            if (index < message.length) {
+                document.getElementById("text").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        typeWriter();
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = window.innerHeight + "px";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 500);
+    </script>
 </body>
 </html>
