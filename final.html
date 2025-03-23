@@ -16,18 +16,31 @@
             color: #323232;
             padding: 20px;
             margin: 0;
-            overflow-y: auto; /* Allow scrolling */
+            overflow-y: auto;
         }
         .container {
             background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 90%; /* Adjust width for responsiveness */
-            width: 600px; /* Fixed max width */
+            max-width: 90%;
+            width: 600px;
             box-sizing: border-box;
-            overflow-wrap: break-word; /* Ensure text breaks properly */
+            overflow-wrap: break-word;
             word-wrap: break-word;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .heart {
             position: absolute;
@@ -43,7 +56,7 @@
         .message {
             font-size: 18px;
             white-space: pre-line;
-            overflow-wrap: break-word; /* Ensure text wraps */
+            overflow-wrap: break-word;
             word-wrap: break-word;
         }
     </style>
@@ -51,40 +64,29 @@
 <body>
     <div class="container">
         <h2>Dear Samiya 👀❤️</h2>
-        <p class="message" id="text"></p>
+        <p class="message">
+            Wanna hear something really beautiful? 👀
+            Samiya, listen, please…👀♥️
+
+            I promise you, from the bottom of my heart, that I will take care of you till my last breath.🥹♥️ No matter what happens, no matter how life changes, I will always be here. When things get tough, when the world feels heavy, when you feel alone—I will be the one standing by your side. 👀♥️♥️
+
+            Whenever you need someone to hold you, a shoulder to lean on, or just someone to talk to, I will be there.👀♥️ You don’t have to go through anything alone. You will always have me, whether it’s a bad day, a silent night, or a moment when you just need to feel understood.
+
+            Samiya, you are everything I ever wanted in a girl.👀♥️ You are kind, understanding, and so pure at heart. You are a thousand times better than Musfira, Aliza, Aiman, or anyone else…🥹♥️ They don’t even come close to you. You are one in a million—a true gem.💎
+
+            In beauty?👀 Samiya wins.
+            In kindness?👀 Samiya wins.
+            In loyalty?👀 Samiya wins.
+            In love?👀 Samiya wins. ❤️
+
+            You are special, not just to me but in every way. You make everything feel better, even without trying. I want to talk to you about so many things—my fears, my dreams, the thoughts I keep hidden. You are the only one I feel safe enough to share them with.👀👀 I’m just waiting for the right moment, making myself ready to open up completely to you.
+
+            Because you, Samiya, are my peace, my happiness, my everything. 👀♥️
+
+            Luv you, meri jaan.♥️♥️♥️
+        </p>
     </div>
     <script>
-        const message = `Wanna hear something really beautiful? 👀
-Samiya, listen, please…👀♥️
-
-I promise you, from the bottom of my heart, that I will take care of you till my last breath.🥹♥️ No matter what happens, no matter how life changes, I will always be here. When things get tough, when the world feels heavy, when you feel alone—I will be the one standing by your side. 👀♥️♥️
-
-Whenever you need someone to hold you, a shoulder to lean on, or just someone to talk to, I will be there.👀♥️ You don’t have to go through anything alone. You will always have me, whether it’s a bad day, a silent night, or a moment when you just need to feel understood.
-
-Samiya, you are everything I ever wanted in a girl.👀♥️ You are kind, understanding, and so pure at heart. You are a thousand times better than Musfira, Aliza, Aiman, or anyone else…🥹♥️ They don’t even come close to you. You are one in a million—a true gem.💎
-
-In beauty?👀 Samiya wins.
-In kindness?👀 Samiya wins.
-In loyalty?👀 Samiya wins.
-In love?👀 Samiya wins. ❤️
-
-You are special, not just to me but in every way. You make everything feel better, even without trying. I want to talk to you about so many things—my fears, my dreams, the thoughts I keep hidden. You are the only one I feel safe enough to share them with.👀👀 I’m just waiting for the right moment, making myself ready to open up completely to you.
-
-Because you, Samiya, are my peace, my happiness, my everything. 👀♥️
-
-Luv you, meri jaan.♥️♥️♥️
-`;
-
-        let index = 0;
-        function typeWriter() {
-            if (index < message.length) {
-                document.getElementById("text").innerHTML += message.charAt(index);
-                index++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        typeWriter();
-
         function createHeart() {
             const heart = document.createElement("div");
             heart.className = "heart";
