@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dear Samiya ❤️</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
             display: flex;
@@ -20,49 +14,37 @@
             font-family: 'Poppins', sans-serif;
             text-align: center;
             color: #323232;
-            overflow: hidden;
             padding: 20px;
+            margin: 0;
+            overflow-y: auto; /* Allow scrolling */
         }
-
         .container {
             background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 500px;
-            min-height: 50vh;
-        }
-
-        .message {
-            font-size: 16px;
-            white-space: pre-line;
-            overflow-wrap: break-word;
+            max-width: 90%; /* Adjust width for responsiveness */
+            width: 600px; /* Fixed max width */
+            box-sizing: border-box;
+            overflow-wrap: break-word; /* Ensure text breaks properly */
             word-wrap: break-word;
         }
-
         .heart {
             position: absolute;
-            font-size: 16px;
+            font-size: 20px;
             color: #ff4d6d;
             animation: float 4s infinite;
-            opacity: 0.8;
         }
-
         @keyframes float {
             0% { transform: translateY(0); opacity: 1; }
             50% { opacity: 0.6; }
-            100% { transform: translateY(-150px); opacity: 0; }
+            100% { transform: translateY(-100px); opacity: 0; }
         }
-
-        @media (max-width: 600px) {
-            .message {
-                font-size: 14px;
-            }
-
-            .heart {
-                font-size: 14px;
-            }
+        .message {
+            font-size: 18px;
+            white-space: pre-line;
+            overflow-wrap: break-word; /* Ensure text wraps */
+            word-wrap: break-word;
         }
     </style>
 </head>
@@ -71,7 +53,6 @@
         <h2>Dear Samiya 👀❤️</h2>
         <p class="message" id="text"></p>
     </div>
-
     <script>
         const message = `Wanna hear something really beautiful? 👀
 Samiya, listen, please…👀♥️
@@ -92,7 +73,6 @@ You are special, not just to me but in every way. You make everything feel bette
 Because you, Samiya, are my peace, my happiness, my everything. 👀♥️
 
 Luv you, meri jaan.♥️♥️♥️
-
 `;
 
         let index = 0;
@@ -110,13 +90,9 @@ Luv you, meri jaan.♥️♥️♥️
             heart.className = "heart";
             heart.innerHTML = "❤️";
             document.body.appendChild(heart);
-
-            // Make sure hearts don't go out of screen
-            const maxWidth = window.innerWidth - 30;
-            heart.style.left = Math.random() * maxWidth + "px";
-            heart.style.top = window.innerHeight - 20 + "px";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = window.innerHeight + "px";
             heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-
             setTimeout(() => heart.remove(), 4000);
         }
         setInterval(createHeart, 500);
