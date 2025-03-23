@@ -299,6 +299,60 @@
 .message-content button:hover {
     background: #ff1e4d;
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceHeart {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes blinkEyes {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.1);
+    }
+}
+
+@keyframes wavePaw {
+    0%, 100% {
+        transform: rotate(50deg);
+    }
+    50% {
+        transform: rotate(40deg);
+    }
+}
+
+/* Applying animations */
+.main {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.heart {
+    animation: bounceHeart 1.5s infinite ease-in-out;
+}
+
+.eye1, .eye2 {
+    animation: blinkEyes 2s infinite ease-in-out;
+}
+
+.paw1 {
+    animation: wavePaw 2s infinite ease-in-out;
+}
 
 </style>
 <div class="main">
